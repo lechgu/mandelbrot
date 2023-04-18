@@ -56,6 +56,7 @@ func generate() string {
 	var b bytes.Buffer
 	w := bufio.NewWriter(&b)
 	png.Encode(w, img)
+	w.Flush()
 	return base64.StdEncoding.EncodeToString(b.Bytes())
 }
 
